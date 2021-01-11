@@ -54,8 +54,8 @@ function updateScore() {
 
 function updateTimer() {
     timer++;
-    mTimer.textContent = 10 - timer;
-    if ((10 - timer) == 0) {
+    mTimer.textContent = 60 - timer;
+    if ((60 - timer) == 0) {
         saveData();
         stopTimer();
         timerRunning = false;
