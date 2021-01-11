@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+#scoreboard{
+    text-align: center;
+    margin-bottom: 20vh;
+}
+/* .container{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+#hole_container{
+    position: relative;
+    height: 50vh;
+}
+#hole_container > div{
+    position: relative;
+}
+#hole_container img{
+    width: 25vw;
+    height: 25vh;
+}
+.mMouse{
+    position: absolute;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}

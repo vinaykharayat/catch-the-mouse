@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <main>
+        <h1></h1>
+        <h2></h2>
+        <section id="scoreboard">
+            <p>Timer-<span id="timer">60</span> sec</p>
+            <p>Score-<span id="score">00</span></p>
+            <form action="#">
+                <button id="cleardata">Clear data</button>
+            </form>
+            
+        </section>
+        <div class="container">
+            <div class="row" id="hole_container">
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+                <div class="col-sm-4 mx-auto">
+                    <img class="mMouse" src="./images/rat.png" alt="hole" srcset="">
+                    <img src="./images/hole.png" alt="hole" srcset="">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="startGame">Start the game</button>
+    </main>
+
+
+
+
+    <!-- jQuery library -->
+    <script src="./js/jquery-3.5.1.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".mMouse").animate({ bottom: '120px' });
+        });
+    </script>
+</body>
+
+</html>
