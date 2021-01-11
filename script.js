@@ -34,7 +34,7 @@ function mouseDisplay() {
 
     })
     var images = document.querySelectorAll(".mMouse");
-    let image = images[Math.floor(Math.random() * 6)];
+    let image = images[Math.floor(Math.random() * 9)];
     image.style.display = "block";
     image.style.bottom = "0px";
     $(".mMouse").animate({ bottom: '120px' });
