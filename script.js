@@ -8,16 +8,17 @@ let highScores = new Map();
 var url = new URL(window.location.href);
 
 let username = url.searchParams.get("name");
-
+console.log(window.localStorage.getItem(username))
 function saveData() {
     if (typeof (Storage) !== "undefined") {
         // Code for localStorage/sessionStorage.
-        if (localStorage.getItem(username) != null) {
-            if (score > localStorage.getItem(username)) {
-                localStorage.setItem(username, score);
+        
+        if (window.localStorage.getItem(username) != null) {
+            if (score > window.localStorage.getItem(username)) {
+                window.localStorage.setItem(username, score);
             }
         }else{
-            localStorage.setItem(username, score);
+            window.localStorage.setItem(username, score);
         }
     } else {
         // Sorry! No Web Storage support..
@@ -54,31 +55,34 @@ function updateScore() {
 
 function updateTimer() {
     timer++;
-    mTimer.textContent = 60 - timer;
-    if ((60 - timer) == 0) {
-        saveData();
+    mTimer.textContent = 10 - timer;
+    if ((10 - timer) == 0) {
         stopTimer();
+        saveData();
+        
         timerRunning = false;
     }
 }
 
 function stopTimer() {
-    window.alert("Time Over");
+    window.alert("Time Over" + "\n Previous Score: " +
+                                window.localStorage.getItem(username) +
+                                "\n New Score: "+ score);
     clearInterval(interval);
     clearInterval(mouseInterval);
     timer = 0;
     mTimer.textContent = "60 sec";
-    document.querySelector("score").textContent = 0;
+    document.querySelector("#score").textContent = 0;
 }
 
 function startTimer() {
     if (!timerRunning) {
-        mouseInterval = setInterval(mouseDisplay, 500);
+        mouseInterval = setInterval(mouseDisplay, 800);
         interval = setInterval(updateTimer, 1000);
 
     }
 }
 
 document.querySelector("#cleardata").addEventListener("click", function(){
-    localStorage.removeItem(username);
+    window.localStorage.removeItem(username);
 })
